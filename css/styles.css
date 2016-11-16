@@ -1,0 +1,43 @@
+@font-face{
+	font-family: HelveticaNeueCyr;
+	src: url(../fonts/HelveticaNeueCyr-Roman.otf) format("opentype");
+}
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: HelveticaNeueCyr;
+}
+.row{
+	padding: 0 20px;
+	max-width: 580px;
+	margin: 0 auto;
+}
+.row-long{
+	max-width: 1180px;
+}
+
+.order__header-wrap{
+	color: #fff;
+	background: url(../img/bg.png) no-repeat;
+	background-size: cover;
+}
+.order__header{
+	height: 160px;
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+}
+.order__phones{
+	text-align: right;
+}
+.order__logo{
+	display: flex;
+	align-items: center;
+}
+.logo__img{
+	margin-right: 30px;
+}
+.logo__title{
+	font-size: 36px;
+}
