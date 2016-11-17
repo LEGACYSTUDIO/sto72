@@ -2,30 +2,272 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>form</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.arcticmodal-0.3.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+
+	<div class="modals">
+		<!-- begin how-to -->
+		<div class="modal modal-how-to js-modal-how-to">
+			<div class="modal__close arcticmodal-close"></div>
+			<div class="modal__title">
+				Как это работает
+			</div>
+			<div class="modal__body">
+				<div class="modal__steps">
+					<div class="modal__step">
+						<div class="modal__step-numb">шаг 1</div>
+						<div class="modal__step-img-wrap">
+							<img src="img/step1.png" alt="">
+						</div>
+						<div class="modal__step-text">
+							Вы оставляете заявку на сайте
+						</div>
+					</div>
+					<div class="modal__step">
+						<div class="modal__step-numb">шаг 2</div>
+						<div class="modal__step-img-wrap">
+							<img src="img/step2.png" alt="">
+						</div>
+						<div class="modal__step-text">
+							Специалист подбирает детали из наличия в городе Тюмени
+						</div>
+					</div>
+					<div class="modal__step">
+						<div class="modal__step-numb">шаг 3</div>
+						<div class="modal__step-img-wrap">
+							<img src="img/step3.png" alt="">
+						</div>
+						<div class="modal__step-text">
+							Специалист созванивается с вами и предлагает варианты запчастей (оригинал и аналоги)
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end how-to -->
+
+		<!-- begin thanks -->
+		<div class="modal modal-order js-modal-order">
+			<div class="modal__close arcticmodal-close"></div>
+			<div class="modal__title">
+				Спасибо за заказ!
+			</div>
+			<div class="modal__body">
+				<p>Номер вашего запроса 2471.<br>
+				Специалист свяжется с вами в течении 2 часов.</p>
+				<p>График работы: ПН-СБ, с 10:00 до 19:00</p>
+			</div>
+		</div>
+		<!-- end thanks -->
+
+		<!-- begin hint -->
+		<div class="modal modal-hint js-modal-hint">
+			<div class="modal__close arcticmodal-close"></div>
+			<div class="modal__body">
+				<img src="img/hint.png" alt="">
+			</div>
+		</div>	
+		<!-- end hint -->
+	</div>
+
 	<div class="order">
 		<header class="order__header-wrap">
-			<div class="row row-long order__header">
-				<div class="order__logo logo">
+			<div class="g-row g-row--long order__header">
+				<a href="#" class="order__logo logo">
 					<img class="logo__img" src="img/logo.png" alt="">
 					<div class="logo__title">
 						Поиск запчастей в Тюмени
 					</div>
-				</div>
+				</a>
 
-				<div class="order__phones">
-					<div class="order__phone">+7 (3452) 500-912 - магазин</div>
-					<div class="order__phone">+7 (3452) 908-908 - СТО</div>
+				<div class="order__phones phones">
+					<div class="phones__item">+7 (3452) 500-912 - магазин</div>
+					<div class="phones__item">+7 (3452) 908-908 - СТО</div>
 				</div>
 			</div>
 		</header>
+		<div class="order__sub-header">
+			<div class="g-row g-row--short">
+				<div class="order__info info">
+					<div class="info__icon icon">
+						<div class="icon__img-wrap">
+							<img class="icon__img" src="img/label.png" alt="наличие в тюмени">
+						</div>
+						<span class="icon__title">наличие в тюмени</span>
+					</div>
+					<div class="info__icon icon">
+						<div class="icon__img-wrap">
+							<img class="icon__img" src="img/truck.png" alt="наличие в тюмени">
+						</div>
+						<span class="icon__title">доставка</span>
+					</div>
+					<div class="info__icon icon">
+						<div class="icon__img-wrap">
+							<img class="icon__img" src="img/gear.png" alt="наличие в тюмени">
+						</div>
+						<span class="icon__title">установка</span>
+					</div>
+					<div class="info__how-to info__how-to--absolute how-to">
+						<button class="how-to__btn js-btn-how-to">Как это работает</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="order__body">
-			
+			<div class="g-row g-row--short">
+				<form class="order__form form">
+					<h3 class="form__title">
+						Оформление заказа
+					</h3>
+					<div class="form__group form__group--two">
+						<div class="form__label">Укажите марку и модель автомобиля*</div>
+						<div class="form__wrap form-wrap--complex">
+							<select class="form__select" name="">
+								<option disabled selected>Выберите марку</option>
+								<option value="item2">item2</option>
+								<option value="item3">item3</option>
+								<option value="item4">item4</option>
+								<option value="item5">item5</option>
+							</select>
+							<select class="form__select" name="">
+								<option disabled selected>Выберите модель</option>
+								<option value="item2">item2</option>
+								<option value="item3">item3</option>
+								<option value="item4">item4</option>
+								<option value="item5">item5</option>
+							</select>
+						</div>
+					</div>
+					<div class="form__group">
+						<div class="form__label">
+							Укажите VIN-код или номер кузова
+							<button class="form__hint js-btn-hint" type="button">?</button>
+						</div>
+						<div class="form__wrap">
+							<textarea class="form__textarea" name=""></textarea>
+						</div>
+					</div>
+
+					<!-- begin hidden -->
+					<div class="form__group form__group--hide form__group--last js-gr-hide">
+						<div class="form__group form__group--two">
+							<div class="form__wrap">
+								<div class="form__group">
+									<div class="form__label">Год выпуска</div>
+									<select class="form__select" name="">
+										<option disabled selected>Выберите год</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+										<option value="item4">item4</option>
+										<option value="item5">item5</option>
+									</select>
+								</div>
+								<div class="form__group">
+									<div class="form__label">Год выпуска</div>
+									<select class="form__select" name="">
+										<option disabled selected>Выберите привод</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+										<option value="item4">item4</option>
+										<option value="item5">item5</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form__group form__group--two">
+							<div class="form__wrap">
+								<div class="form__group">
+									<div class="form__label">Объем двигателя</div>
+									<select class="form__select" name="">
+										<option disabled selected>Выберите объем</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+										<option value="item4">item4</option>
+										<option value="item5">item5</option>
+									</select>
+								</div>
+								<div class="form__group">
+									<div class="form__label">Тип топлива</div>
+									<select class="form__select" name="">
+										<option disabled selected>Бензин</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+										<option value="item4">item4</option>
+										<option value="item5">item5</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form__group form__group--two form__group--last">
+							<div class="form__wrap">
+								<div class="form__group">
+									<div class="form__label">Выберите кузов</div>
+									<select class="form__select" name="">
+										<option disabled selected>Выберите марку</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+										<option value="item4">item4</option>
+										<option value="item5">item5</option>
+									</select>
+								</div>
+								<div class="form__group">
+									<div class="form__label">Положение руля</div>
+									<select class="form__select" name="">
+										<option disabled selected>Выберите модель</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+										<option value="item4">item4</option>
+										<option value="item5">item5</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end hidden -->
+
+					<div class="form__group">
+						<button class="form__more js-more" type="button">Подробнее</button>	
+						<div class="form__label">
+							Перечислите интересующие Вас детали*
+						</div>
+						<div class="form__wrap">
+							<textarea class="form__textarea form__textarea--big" name=""></textarea>
+						</div>
+					</div>
+					<div class="form__group">
+						<div class="form__label">
+							Укажите Ваш E-mail*
+						</div>
+						<div class="form__wrap">
+							<input type="email" class="form__input">
+						</div>
+					</div>
+					<div class="form__group">
+						<div class="form__label">
+							Укажите Ваш E-mail*
+						</div>
+						<div class="form__wrap">
+							<input type="text" class="form__input">
+						</div>
+					</div>
+					<div class="form__group">
+						<button type="button" class="form__btn js-btn-order">Отправить заказ</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
