@@ -18,6 +18,7 @@ $gray: #bbb;
 	margin-top: -2px;
 	border: 2px solid $gray;
 	background: #fff;
+	box-sizing: border-box;
 	li{
 		border-bottom: 1px solid $gray;
 		padding: 10px;
@@ -37,7 +38,13 @@ $gray: #bbb;
 	background-size: 100%;
 	top: 16px;
 }
-
+.ui-menu-item:hover{
+	background: $orange;
+	color: #fff;
+}
+.ui-state-disabled{
+	color: lighten($gray, 15%);
+}
 
 
 *{
@@ -331,6 +338,7 @@ button{
 	}
 	.modal__step{
 		max-width: 100%;
+		margin-bottom: 20px;
 	}
 	.order__header{
 		display: block;

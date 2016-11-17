@@ -14,7 +14,8 @@
 .ui-menu {
   margin-top: -2px;
   border: 2px solid #bbb;
-  background: #fff; }
+  background: #fff;
+  box-sizing: border-box; }
   .ui-menu li {
     border-bottom: 1px solid #bbb;
     padding: 10px; }
@@ -31,6 +32,13 @@
   background-repeat: no-repeat;
   background-size: 100%;
   top: 16px; }
+
+.ui-menu-item:hover {
+  background: #f44336;
+  color: #fff; }
+
+.ui-state-disabled {
+  color: #e1e1e1; }
 
 * {
   box-sizing: border-box;
@@ -307,7 +315,8 @@ button {
       margin-right: 0;
       margin: 15px; }
   .modal__step {
-    max-width: 100%; }
+    max-width: 100%;
+    margin-bottom: 20px; }
   .order__header {
     display: block;
     text-align: center;
