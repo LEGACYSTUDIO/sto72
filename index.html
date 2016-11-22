@@ -59,7 +59,7 @@
 				Спасибо за заказ!
 			</div>
 			<div class="modal__body">
-				<p>Номер вашего запроса 2471.<br>
+				<p>Номер вашего запроса <b>2471</b>.<br>
 				Специалист свяжется с вами в течении 2 часов.</p>
 				<p>График работы: ПН-СБ, с 10:00 до 19:00</p>
 			</div>
@@ -122,27 +122,31 @@
 
 		<div class="order__body">
 			<div class="g-row g-row--short">
-				<form class="order__form form">
+				<form class="order__form form js-form">
 					<h3 class="form__title">
 						Оформление заказа
 					</h3>
 					<div class="form__group form__group--two">
 						<div class="form__label">Укажите марку и модель автомобиля*</div>
-						<div class="form__wrap form-wrap--complex">
-							<select class="form__select" name="">
-								<option disabled selected>Выберите марку</option>
-								<option value="item2">item2</option>
-								<option value="item3">item3</option>
-								<option value="item4">item4</option>
-								<option value="item5">item5</option>
-							</select>
-							<select class="form__select" name="">
-								<option disabled selected>Выберите модель</option>
-								<option value="item2">item2</option>
-								<option value="item3">item3</option>
-								<option value="item4">item4</option>
-								<option value="item5">item5</option>
-							</select>
+						<div class="form__wrap">
+							<div class="form__group">
+								<select class="form__select" name="mark">
+									<option disabled selected>Выберите марку</option>
+									<option value="item2">item2</option>
+									<option value="item3">item3</option>
+									<option value="item4">item4</option>
+									<option value="item5">item5</option>
+								</select>
+							</div>
+							<div class="form__group">
+								<select class="form__select" name="model">
+									<option disabled selected>Выберите модель</option>
+									<option value="item2">item2</option>
+									<option value="item3">item3</option>
+									<option value="item4">item4</option>
+									<option value="item5">item5</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="form__group">
@@ -151,7 +155,7 @@
 							<button class="form__hint js-btn-hint" type="button">?</button>
 						</div>
 						<div class="form__wrap">
-							<textarea class="form__textarea" name=""></textarea>
+							<textarea class="form__textarea" name="vin"></textarea>
 						</div>
 					</div>
 
@@ -161,7 +165,7 @@
 							<div class="form__wrap">
 								<div class="form__group">
 									<div class="form__label">Год выпуска</div>
-									<select class="form__select" name="">
+									<select class="form__select" name="year_create">
 										<option disabled selected>Выберите год</option>
 										<option value="item2">item2</option>
 										<option value="item3">item3</option>
@@ -171,7 +175,7 @@
 								</div>
 								<div class="form__group">
 									<div class="form__label">Год выпуска</div>
-									<select class="form__select" name="">
+									<select class="form__select" name="year_release">
 										<option disabled selected>Выберите привод</option>
 										<option value="item2">item2</option>
 										<option value="item3">item3</option>
@@ -185,7 +189,7 @@
 							<div class="form__wrap">
 								<div class="form__group">
 									<div class="form__label">Объем двигателя</div>
-									<select class="form__select" name="">
+									<select class="form__select" name="volume">
 										<option disabled selected>Выберите объем</option>
 										<option value="item2">item2</option>
 										<option value="item3">item3</option>
@@ -195,7 +199,7 @@
 								</div>
 								<div class="form__group">
 									<div class="form__label">Тип топлива</div>
-									<select class="form__select" name="">
+									<select class="form__select" name="fuel">
 										<option disabled selected>Бензин</option>
 										<option value="item2">item2</option>
 										<option value="item3">item3</option>
@@ -209,7 +213,7 @@
 							<div class="form__wrap">
 								<div class="form__group">
 									<div class="form__label">Выберите кузов</div>
-									<select class="form__select" name="">
+									<select class="form__select" name="carcass">
 										<option disabled selected>Выберите марку</option>
 										<option value="item2">item2</option>
 										<option value="item3">item3</option>
@@ -219,7 +223,7 @@
 								</div>
 								<div class="form__group">
 									<div class="form__label">Положение руля</div>
-									<select class="form__select" name="">
+									<select class="form__select" name="rudder">
 										<option disabled selected>Выберите модель</option>
 										<option value="item2">item2</option>
 										<option value="item3">item3</option>
@@ -238,7 +242,7 @@
 							Перечислите интересующие Вас детали*
 						</div>
 						<div class="form__wrap">
-							<textarea class="form__textarea form__textarea--big" name=""></textarea>
+							<textarea class="form__textarea form__textarea--big" name="details"></textarea>
 						</div>
 					</div>
 					<div class="form__group">
@@ -246,20 +250,22 @@
 							Укажите Ваш E-mail*
 						</div>
 						<div class="form__wrap">
-							<input type="email" class="form__input">
+							<input type="email" class="form__input" name="email">
 						</div>
 					</div>
 					<div class="form__group">
 						<div class="form__label">
-							Укажите Ваш E-mail*
+							Укажите Ваш номер телефона*
 						</div>
 						<div class="form__wrap">
-							<input type="text" class="form__input">
+							<input type="text" class="form__input" name="phone">
 						</div>
 					</div>
 					<div class="form__group">
-						<button type="button" class="form__btn js-btn-order">Отправить заказ</button>
+						<button type="submit" class="form__btn">Отправить заказ</button>
 					</div>
+					 <div class="js-form-message"></div>
+					 <div class="form-input_error"></div>
 				</form>
 			</div>
 		</div>
@@ -268,6 +274,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
