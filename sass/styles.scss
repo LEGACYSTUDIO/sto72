@@ -9,18 +9,19 @@
 	font-weight: bold;
 }
 
-/* цвет оранжевого текста */
 $orange: #f44336;
 $gray: #bbb;
+$white: #fff;
+$black: #000;
 
 /* select-menu */
 .ui-menu{
 	margin-top: -2px;
 	border: 2px solid $gray;
-	background: #fff;
+	background: $white;
 	box-sizing: border-box;
 	li{
-		border-bottom: 1px solid $gray;
+		border-bottom: 2px solid $black;
 		padding: 10px;
 	}
 	li:last-child{
@@ -36,20 +37,34 @@ $gray: #bbb;
 	right: 10px;
 	background-repeat: no-repeat;
 	background-size: 100%;
-	top: 16px;
+	top: 50%;
+    transform: translateY(-50%);
+}
+.ui-selectmenu-menu .ui-menu{
+	padding-bottom: 0;
+	border-color: $black;
 }
 .ui-menu-item:hover{
 	background: $orange;
-	color: #fff;
+	color: $white;
 }
 .ui-state-disabled{
 	color: lighten($gray, 15%);
 }
+.ui-selectmenu-button.ui-button{
+	width: 100%;
+}
+.ui-selectmenu-text{
+	display: inline;
+}
 
-
+/* general styles */
 *{
 	box-sizing: border-box;
 	outline: none;
+}
+b{
+	font-weight: bold;
 }
 body,
 button{
@@ -60,7 +75,7 @@ button{
 	border: none;
 	border-radius: 23px;
 	background: $orange;
-	color: #fff;
+	color: $white;
 	padding: 13px 21px;
 	font-size: 18px;
 	-webkit-transition: background .2s ease;
@@ -83,7 +98,7 @@ button{
 }
 .order{
 	&__header-wrap{
-		color: #fff;
+		color: $white;
 		background: url(../img/bg.png) no-repeat;
 		background-size: cover;
 	}
@@ -106,7 +121,7 @@ button{
 }
 .logo{
 	text-decoration: none;
-	color: #fff;
+	color: $white;
 	&__img{
 		margin-right: 30px;
 	}
@@ -131,6 +146,8 @@ button{
 		&--absolute{
 			position: absolute;
 			right: -280px;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -140,7 +157,7 @@ button{
 	flex-direction: column;
 	justify-content: space-between;
 	height: 80px;
-	width: 300px;
+	/* width: 300px; */
 	margin: 0 15px;
 	&__title{
 		text-transform: uppercase;
@@ -164,14 +181,23 @@ button{
 	.ui-selectmenu-button{
 		border: 2px solid $gray;
 		border-radius: 3px;
-		padding: 10px;
+		padding: 16px;
 		font-size: 16px;
 		resize: none;
+		&:focus{
+			border-color: $black;
+		}
+		&.error{
+			border-color: $orange;
+		}
+		&.valid{
+			border-color: $black;
+		}
 	}
 	select{
 		color: $gray;
 		option:not(:first-child){
-			color: #000;
+			color: $black;
 		}
 	}
 	padding-top: 50px;
@@ -229,7 +255,7 @@ button{
 	}
 	&__hint{
 		font-size: 12px;
-		color: #fff;
+		color: $white;
 		border-radius: 50%;
 		background: #bbb;
 		width: 19px;
@@ -246,7 +272,7 @@ button{
 .modal{
 	position: relative;
 	padding: 50px;
-	background: #fff;
+	background: $white;
 	line-height: 20px;
 	border-radius: 3px;
 	&__close{
@@ -262,7 +288,7 @@ button{
 			content: ' ';
 			height: 22px;
 			width: 2px;
-			background: #000;
+			background: $black;
 		}
 		&:before {
 		  	transform: rotate(45deg);
@@ -273,10 +299,11 @@ button{
 	}
 	&__steps{
 		display: flex;
+		align-items: flex-start;
 	}
 	&__step{
 		display: flex;
-		flex-direction: column;
+		flex-flow: row wrap;
 		align-items: center;
 		max-width: 215px;
 		text-align: center;
@@ -286,16 +313,18 @@ button{
 		@extend .form__title;
 	}
 	&__step-numb{
+		width: 100%;
 		color: $gray;
 		text-transform: uppercase;
 		font-size: 14px;
 		margin-bottom: 20px;
 	}
 	&__step-img-wrap{
+		width: 100%;
 		margin-bottom: 20px;
 	}
 	&__step-text{
-		
+		width: 100%;
 	}
 }
 
@@ -318,6 +347,19 @@ button{
 		position: relative;
 		flex: 1 100%;
 		right: 0;
+		transform: none;
+		top: auto;
+		flex: auto;
+	}
+}
+@media (max-width: 800px){
+	.modal__steps{
+		display: block;
+	}
+	.modal__step{
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
 	}
 }
 @media (max-width: 600px){
@@ -336,14 +378,13 @@ button{
 			margin: 15px;
 		}
 	}
-	.modal__step{
-		max-width: 100%;
-		margin-bottom: 20px;
-	}
 	.order__header{
 		display: block;
 		text-align: center;
 		height: auto;
+	}
+	.order__sub-header{
+		padding: 40px;
 	}
 	.order__phones{
 		text-align: center;
