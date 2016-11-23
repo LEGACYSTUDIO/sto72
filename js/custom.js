@@ -14,7 +14,20 @@ $(function(){
 		});
 	});
 
-	$(".form__select" ).selectmenu();
+	$('.form__select').selectmenu();
+	
+	// отдельный список моделей под каждую марку
+	$(".js-select-mark" ).selectmenu({
+		change: function(event, ui){
+			var value = ui.item.value,
+				selectHidden = $('.' + value).clone(),
+				blockModel = $('.js-block-model select');
+
+			blockModel.replaceWith(selectHidden);
+			$(".js-block-model select").selectmenu();
+		}
+	});
+	
 
 	var opt = {
 		overlay: {
