@@ -27,7 +27,6 @@ $(function(){
 			$(".js-block-model select").selectmenu();
 		}
 	});
-	
 
 	var opt = {
 		overlay: {

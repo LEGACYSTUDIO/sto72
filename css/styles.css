@@ -79,7 +79,7 @@ button {
   button:hover {
     background: #d2190b; }
 
-.hidden {
+.select-hidden {
   display: none;
   visibility: hidden;
   width: 0;
