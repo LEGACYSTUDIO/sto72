@@ -120,6 +120,25 @@
 			</div>
 		</div>
 
+		<!-- begin hidden selects -->
+			<div class="hidden">
+				<select class="item1" name="model">
+					<option disabled selected>Выберите модель</option>
+					<option value="item2">item1 model1</option>
+					<option value="item3">item1 model2</option>
+					<option value="item4">item1 model3</option>
+					<option value="item5">item1 model4</option>
+				</select>
+				<select class="item2" name="model">
+					<option disabled selected>Выберите модель</option>
+					<option value="item3">item2 model1</option>
+					<option value="item2">item2 model2</option>
+					<option value="item4">item2 model3</option>
+					<option value="item5">item2 model4</option>
+				</select>
+			</div>
+		<!-- end hidden selects -->
+
 		<div class="order__body">
 			<div class="g-row g-row--short">
 				<form class="order__form form js-form">
@@ -130,21 +149,15 @@
 						<div class="form__label">Укажите марку и модель автомобиля*</div>
 						<div class="form__wrap">
 							<div class="form__group">
-								<select class="form__select" name="mark">
+								<select class="form__select js-select-mark" name="mark">
 									<option disabled selected>Выберите марку</option>
+									<option value="item1">item1</option>
 									<option value="item2">item2</option>
-									<option value="item3">item3</option>
-									<option value="item4">item4</option>
-									<option value="item5">item5</option>
 								</select>
 							</div>
-							<div class="form__group">
-								<select class="form__select" name="model">
+							<div class="form__group js-block-model">
+								<select class="form__select form__select--disabled" name="model" disabled>
 									<option disabled selected>Выберите модель</option>
-									<option value="item2">item2</option>
-									<option value="item3">item3</option>
-									<option value="item4">item4</option>
-									<option value="item5">item5</option>
 								</select>
 							</div>
 						</div>

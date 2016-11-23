@@ -57,6 +57,10 @@ $black: #000;
 .ui-selectmenu-text{
 	display: inline;
 }
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active{
+	margin: 0;
+}
 
 /* general styles */
 *{
@@ -84,6 +88,14 @@ button{
 	&:hover{
 		background: darken($orange, 15%);
 	}
+}
+.hidden{
+	display: none;
+	visibility: hidden;
+	width: 0;
+	position: absolute;
+	top: -1000px;
+	left: -1000px;
 }
 .g-row{
 	padding: 0 20px;
