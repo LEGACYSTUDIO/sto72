@@ -50,9 +50,26 @@
 .ui-selectmenu-text {
   display: inline; }
 
+.ui-menu {
+  max-height: 266px !important; }
+
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active {
   margin: 0; }
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em; }
+
+::-webkit-scrollbar-thumb {
+  background: #f44336; }
+
+::-webkit-scrollbar-track {
+  background: #bbb; }
+
+body {
+  scrollbar-face-color: #f44336;
+  scrollbar-track-color: #bbb; }
 
 /* general styles */
 * {

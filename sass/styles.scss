@@ -8,6 +8,25 @@
 	src: url(../fonts/HelveticaNeueCyr-Bold.ttf) format("truetype");
 	font-weight: bold;
 }
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+	::-webkit-scrollbar {
+		width:  $size;
+		height: $size;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+	}
+
+	::-webkit-scrollbar-track {
+		background: $background-color;
+	}
+
+	body {
+		scrollbar-face-color: $foreground-color;
+		scrollbar-track-color: $background-color;
+	}
+}
 
 $orange: #f44336;
 $gray: #bbb;
@@ -57,10 +76,14 @@ $black: #000;
 .ui-selectmenu-text{
 	display: inline;
 }
+.ui-menu{
+	max-height: 266px!important;
+}
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active{
 	margin: 0;
 }
+@include scrollbars(.5em, $orange, $gray);
 
 /* general styles */
 *{
