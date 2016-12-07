@@ -83,7 +83,7 @@ $(function(){
 		        model: {
 		        	required: true
 		        },
-		        vin: {
+		        details: {
 		        	required: true
 		        },
 		    },
